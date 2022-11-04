@@ -3,7 +3,8 @@
 ![image](https://user-images.githubusercontent.com/12772049/200086408-2d85ff1b-9858-480c-b972-0b4b48239906.png)
 
 
-This is the research repository for RGBDGaze: Gaze Tracking on Smartphones with RGB and Depth Data (ICMI 2022).
+This is the research repository for [RGBDGaze: Gaze Tracking on Smartphones with RGB and Depth Data](https://dl.acm.org/doi/10.1145/3536221.3556568), presented at ACM ICMI 2022.
+
 It contains the training code and dataset link. 
 
 # Environment
