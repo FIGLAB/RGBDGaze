@@ -1,0 +1,42 @@
+MODEL:
+    TYPE: SpatialWeightsCNN
+    NAME: paper_rgb
+    IM_SIZE: 448
+    FEATURE_TYPE: rgb
+
+DATA:
+    NORMALIZE: TRUE
+    NAME: RGBDGaze_dataset
+    FEATURE_TYPE: rgb
+
+TRAIN:
+    NUM_EPOCH: 10
+    NUM_GPU: 1
+    OPTIMIZER:
+        NAME: SGD
+        PARAM:
+            LR: 0.0001
+            STEP_SIZE: 3
+            MOMENTUM: 0.9
+            WEIGHT_DECAY: 0.0001
+    DATALOADER:
+        BATCH_SIZE: 128
+        NUM_WORKERS: 0
+        SHUFFLE: True
+        PIN_MEMORY: True
+    VALIDATION:
+        VAL_INTERVAL: 1 
+        DATALOADER:
+            BATCH_SIZE: 32
+            NUM_WORKERS: 0
+            SHUFFLE: False
+            PIN_MEMORY: True
+        EALRY_STOP:
+            PATIENCE: 5
+
+TEST:
+    DATALOADER:
+        BATCH_SIZE: 32
+        NUM_WORKERS: 0
+        SHUFFLE: False
+        PIN_MEMORY: True

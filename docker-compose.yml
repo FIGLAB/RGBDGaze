@@ -1,0 +1,18 @@
+version: "2.3"
+services:
+  experiment:
+    build:
+      context: .
+    environment:
+      - SSH_AUTH_SOCK=$DOCKER_SSH_AUTH_SOCK
+    env_file:
+      - .env
+    image: $DOCKER_IMAGE
+    runtime: $DOCKER_RUNTIME
+    shm_size: $DOCKER_SHM_SIZE
+    volumes:
+      - .:/root/workspace
+      - $HOST_DATADRIVE:/root/datadrive
+      - $SSH_AUTH_SOCK:/ssh-agent
+      - /run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock
+    command: /bin/bash

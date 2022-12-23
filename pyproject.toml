@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "RGBDGaze"
+version = "1.0.0"
+description = "Algorithm package for RGBDGaze."
+authors = ["Riku Arakawa"]
+repository = "https://github.com/FIGLAB/RGBDGaze"
+packages = [{ include = "GazeEstimation" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "*"
+pandas = "*"
+PyYAML = "*"
+pycuda = "*"
+scipy = "*"
+scikit-learn = "==0.23.1"
+tensorboard = "*"
+torch = "*"
+tqdm = "*"
+torchvision = "*"
+coremltools = "*"
+opencv-python = "==4.5.5.64"
+seaborn = "^0.11.2"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "*"
+flake8 = "*"
+flake8-commas = "*"
+flake8-isort = "*"
+flake8-quotes = "*"
+jupyter = "*"
+jupyterlab = "*"
+matplotlib = "*"
+pep8-naming = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]

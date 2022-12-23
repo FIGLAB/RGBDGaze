@@ -1,0 +1,42 @@
+MODEL:
+    TYPE: TwoStream
+    NAME: paper_rgbd
+    IM_SIZE: 448
+    FEATURE_TYPE: rgbd
+
+DATA:
+    NORMALIZE: TRUE
+    NAME: RGBDGaze_dataset
+    FEATURE_TYPE: rgbd
+
+TRAIN:
+    NUM_EPOCH: 20
+    NUM_GPU: 1
+    OPTIMIZER:
+        NAME: SGD
+        PARAM:
+            LR: 0.0005
+            STEP_SIZE: 5
+            MOMENTUM: 0.9
+            WEIGHT_DECAY: 0.0001
+    DATALOADER:
+        BATCH_SIZE: 8
+        NUM_WORKERS: 0
+        SHUFFLE: True
+        PIN_MEMORY: True
+    VALIDATION:
+        VAL_INTERVAL: 1 
+        DATALOADER:
+            BATCH_SIZE: 8
+            NUM_WORKERS: 0
+            SHUFFLE: False
+            PIN_MEMORY: True
+        EALRY_STOP:
+            PATIENCE: 5
+
+TEST:
+    DATALOADER:
+        BATCH_SIZE: 8
+        NUM_WORKERS: 0
+        SHUFFLE: False
+        PIN_MEMORY: True
