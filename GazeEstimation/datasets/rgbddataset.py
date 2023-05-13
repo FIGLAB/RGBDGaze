@@ -40,14 +40,14 @@ def load_dataset(dataset_dir, config):
     test = Dataset(dataset_dir, metadata, test, feature_type)
     return train, val, test
 
-def _load_indices(meta_data, train_pid, val_pid, test_pid):
+def _load_indices(meta_data, train_pids, val_pids, test_pids):
     train, val, test = [], [], []
     for i, pid in enumerate(meta_data['pid']):
-        if pid == test_pid:
+        if pid in test_pids:
             test.append(i)
-        elif pid == val_pid:
+        elif pid in val_pids:
             val.append(i)
-        elif pid in train_pid:
+        elif pid in train_pids:
             train.append(i)
 
     logger.info(f'{len(train)=}, {len(val)=}, {len(test)=}')
