@@ -18,7 +18,7 @@ It contains the training code and dataset link.
 
 ## 1. Download dataset and pretrained RGB model
 
-- Dataset: https://www.dropbox.com/s/iixjrxzxx7nbupl/RGBDGaze_dataset.zip?dl=0
+- Dataset: https://www.dropbox.com/scl/fi/2ztabhldq7w0vndqmywrf/RGBDGaze_dataset.zip?rlkey=kiit9lii5lq1tjjvohv1mwl7b&dl=0
 - RGB part of the Spatial CNN model pretrained with [GazeCapture](https://gazecapture.csail.mit.edu/) dataset: https://www.dropbox.com/s/dgpn0j212l260q1/pretrained_rgb.pth?dl=0
 
 ## 2. Clone
